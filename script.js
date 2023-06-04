@@ -1,7 +1,13 @@
 
 let dispaly=document.getElementById("display");
 let orderList=[];
-getMenu();
+try{
+    getMenu();
+}
+catch(error){
+ console.log("Error Occured ",error);
+}
+
 
 function displayItems(data){
     let dbar=document.getElementById("items");
@@ -57,6 +63,8 @@ async function  getMenu(){
 
 function TakeOrder(){
         //order taken
+        try{}
+        catch(error){console.log("Error Cooured ",error)}
        let pro= new Promise((resolve)=>{
         setTimeout(()=>{resolve(orderList)},2500)
        });
